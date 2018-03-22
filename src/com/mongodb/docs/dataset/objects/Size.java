@@ -2,42 +2,42 @@ package com.mongodb.docs.dataset.objects;
 
 public class Size {
 
-    private double height;
-    private double width;
-    private double length;
-    private String unit;
+    private double h;
+    private double w;
+    private double l;
+    private String uom;
     private String sizeoverride;
 
-    public void setHeight(final double height) {
-        this.height = height;
+    public void setH(final double height) {
+        this.h = height;
     }
 
-    public double getHeight() {
-        return this.height;
+    public double getH() {
+        return this.h;
     }
 
-    public void setWidth(final double width) {
-        this.width = width;
+    public void setW(final double width) {
+        this.w = width;
     }
 
-    public double getWidth() {
-        return this.width;
+    public double getW() {
+        return this.w;
     }
 
-    public void setLength(final double length) {
-        this.length = length;
+    public void setL(final double length) {
+        this.l = length;
     }
 
-    public double getLength() {
-        return this.length;
+    public double getL() {
+        return this.l;
     }
 
-    public void setUnit(final String unit) {
-        this.unit = unit;
+    public void setUom(final String unit) {
+        this.uom = unit;
     }
 
-    public String getUnit() {
-        return this.unit;
+    public String getUom() {
+        return this.uom;
     }
 
     public void setSizeOverride(String override) {

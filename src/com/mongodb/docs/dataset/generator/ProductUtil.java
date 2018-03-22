@@ -44,13 +44,13 @@ public class ProductUtil {
 
     private static Size getSizeLocal(boolean useCm) {
         Size sizeLocalLocal = new Size();
-        sizeLocalLocal.setHeight(
+        sizeLocalLocal.setH(
                 ThreadLocalRandom.current().nextInt(1, 500 + 1));
-        sizeLocalLocal.setWidth(
+        sizeLocalLocal.setW(
                 ThreadLocalRandom.current().nextInt(1, 500 + 1));
-        sizeLocalLocal.setLength(
+        sizeLocalLocal.setL(
                 ThreadLocalRandom.current().nextInt(1, 500 + 1));
-        sizeLocalLocal.setUnit(useCm ? "cm" : "in");
+        sizeLocalLocal.setUom(useCm ? "cm" : "in");
         return sizeLocalLocal;
 
     }
