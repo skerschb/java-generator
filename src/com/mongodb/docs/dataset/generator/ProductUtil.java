@@ -38,7 +38,7 @@ public class ProductUtil {
             newProd.setStatus(
                     String.valueOf(status[newProd.getQty() % 4]));
             newProd.setRating(getRatings(status));
-            newProd.setCurrentDate(getDate());
+            newProd.setLastModified(getDate());
             productList.add(newProd);
         }
 

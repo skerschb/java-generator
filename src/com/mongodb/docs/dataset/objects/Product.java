@@ -10,14 +10,14 @@ public final class Product {
     private Size size;
     private List<Rating> ratings;
     private String status;
-    private Date currentDate;
+    private Date lastModified;
     
-    public Date getCurrentDate() {
-        return this.currentDate;
+    public Date getLastModified() {
+        return this.lastModified;
     }
     
-    public void setCurrentDate(Date date) {
-        this.currentDate = date;
+    public void setLastModified(Date date) {
+        this.lastModified = date;
     }
 
     public Product() {
