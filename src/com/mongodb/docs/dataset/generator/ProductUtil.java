@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 import com.mongodb.docs.dataset.objects.Product;
 import com.mongodb.docs.dataset.objects.Rating;
@@ -28,7 +30,7 @@ public class ProductUtil {
             Product newProd = new Product();
             newProd.setQty(
                     ThreadLocalRandom.current().nextInt(1, 4000 + 1));
-            newProd.setName(product);
+            newProd.setItem(product);
             List<String> tagsLocal = getTagsLocal(tags);
             newProd.setTags(tagsLocal);
             sizeCm = !sizeCm;
@@ -36,12 +38,32 @@ public class ProductUtil {
             newProd.setStatus(
                     String.valueOf(status[newProd.getQty() % 4]));
             newProd.setRating(getRatings(status));
+            newProd.setCurrentDate(getDate());
             productList.add(newProd);
         }
 
         return productList;
     }
 
+    
+    private static Date getDate() {
+        Random  rnd;
+        Date    dt;
+        long    ms;
+
+        // Get a new random instance, seeded from the clock
+        rnd = new Random();
+
+        // Get an Epoch value roughly between 1940 and 2010
+        // -946771200000L = January 1, 1940
+        // Add up to 70 years to it (using modulus on the next long)
+        ms = 1420088400000L + (Math.abs(rnd.nextLong()) % (2L * 365 * 24 * 60 * 60 * 1000));
+
+        // Construct a date
+        return new Date(ms);
+        
+    }
+    
     private static Size getSizeLocal(boolean useCm) {
         Size sizeLocalLocal = new Size();
         sizeLocalLocal.setH(

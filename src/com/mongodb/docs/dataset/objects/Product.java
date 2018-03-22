@@ -1,20 +1,30 @@
 package com.mongodb.docs.dataset.objects;
 
+import java.util.Date;
 import java.util.List;
 
 public final class Product {
-    private String name;
+    private String item;
     private int qty;
     private List<String> tags;
     private Size size;
     private List<Rating> ratings;
     private String status;
+    private Date currentDate;
+    
+    public Date getCurrentDate() {
+        return this.currentDate;
+    }
+    
+    public void setCurrentDate(Date date) {
+        this.currentDate = date;
+    }
 
     public Product() {
     }
 
-    public String getName() {
-        return name;
+    public String getItem() {
+        return item;
     }
 
     public String getStatus() {
@@ -25,8 +35,8 @@ public final class Product {
         this.status = status;
     }
 
-    public void setName(final String name) {
-        this.name = name;
+    public void setItem(final String name) {
+        this.item = name;
     }
 
     public int getQty() {
